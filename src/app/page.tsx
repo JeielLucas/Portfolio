@@ -5,7 +5,7 @@ import { Template } from "@/components/Template";
 export default function Home() {
   return (
     <Template>
-
+      <About />
       <ProjectCard
         title= "Auth Project"
         image= "https://solutis.com.br/wp-content/uploads/2020/12/dev-carreira.jpg"

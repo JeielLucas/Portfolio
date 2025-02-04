@@ -23,14 +23,14 @@ export const ProjectCard:React.FC<ProjectCardProps> = ({
     outsideLine= false
 }) =>{
 
-    const [isHovered, setIsHovered] = useState(true);
+    const [isHovered, setIsHovered] = useState(false);
 
     return(
         <div
             className="relative rounded-lg overflow-hidden group"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onClick={() => setIsHovered(!isHovered)}
+            onMouseEnter={() => window.innerHeight >= 768 && setIsHovered(true)}
+            onMouseLeave={() => window.innerHeight >= 768 && setIsHovered(false)}
+            onClick={() => window.innerHeight < 768 && setIsHovered(!isHovered)}
         >
 
             <div className={`
