@@ -10,7 +10,7 @@ interface ProjectCardProps{
     stack: string[];
     description: string;
     repository: string;
-    outsideLine?: boolean;
+    type?: string;
 }
 
 
@@ -20,10 +20,10 @@ export const ProjectCard:React.FC<ProjectCardProps> = ({
     stack,
     description,
     repository,
-    outsideLine= false
+    type
 }) =>{
 
-    const [isHovered, setIsHovered] = useState(false);
+    const [isHovered, setIsHovered] = useState(true);
 
     return(
         <div
@@ -37,20 +37,24 @@ export const ProjectCard:React.FC<ProjectCardProps> = ({
 
             <h3 className="text-xl text-center">{title}</h3>
             
+            
             <div className="relative">
                 <img src={image}/>
                 <div className={`
                     absolute inset-0 bg-gray-900/80
                     flex flex-col items-center justify-center
                     transition-all duration-300
+                    sm:hidden
                     ${isHovered ? "opacity-100" : "opacity-0"}
                 `}>
-                <p className="text-center p-3">{description}</p>
-                <Button link="#" text="Repositório"/>
+                    <p className="text-center p-3 text-[#f9f9f9]">{description}</p>
+                    <Button link={repository} text="Repositório" type={type}/>
                 </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 
+            md:grid-cols-2 
+            lg:grid-cols-3">
                 {stack.map((stack, index) =>(
                     <Tag tech={stack} key={index}/>
                 ))}

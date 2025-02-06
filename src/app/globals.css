@@ -3,20 +3,37 @@
 @tailwind utilities;
 @import '@fontsource/montserrat';
 
+html:not([data-theme]) {
+  visibility: hidden;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light {
+  --background: #F9F9F9;
+  --foreground: #171717;
+  --primary: #13131f;
+  --secondary: #F9F9F9;
+
+}
+
+.dark {
+  --background: #13131F;
+  --foreground: #ededed;
+  --primary: #F9F9F9;
+  --secondary: #13131f;
 }
 
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
   font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }

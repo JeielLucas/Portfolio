@@ -14,7 +14,7 @@ export const Contact: React.FC<ContactProps> = ({
     style
 }) =>{
     return(
-        <a href={link} className={`flex flex-col gap-3 items-center ${style}`}>
+        <a href={link} target="_blank" className={`flex flex-col gap-3 items-center ${style}`}>
             <img src={image} className="w-15 h-15"/>
             <p className="font-semibold text-xl">{type}</p>
             <span className="text-[#828282]">{text}</span>

@@ -2,15 +2,21 @@ interface ButtonProps{
     text?: string;
     link?: string;
     variant?: "primary" | "secondary";
+    download?: boolean;
+    type?: string;
+    style?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
     variant = "primary",
     link,
-    text
+    text,
+    download,
+    type,
+    style = "text-[var(--primary)]"
 }) =>{
 
-    const baseStyles = "pl-2 pr-2 rounded-xl text-center";
+    const baseStyles = "px-2 rounded-xl text-center";
 
     const variants = {
         primary: "text-white bg-[#134E4A]",
@@ -18,8 +24,8 @@ export const Button: React.FC<ButtonProps> = ({
     };
 
     return(
-        <button className={`${baseStyles} ${variants[variant]}`} >
-            <a href={link}>
+        <button className={`${baseStyles} ${variants[variant]} ${style}`} >
+            <a href={link} {...(download ? { download: true} : {})} target={type}>
                 {text}
             </a>
         </button>
