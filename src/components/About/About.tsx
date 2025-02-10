@@ -13,8 +13,8 @@ export const About = () =>{
                     "
                 />
             <div className="flex flex-col items-center gap-5 m-5 md:items-start">
-                <h2 className="flex flex-col font-bold text-2xl">
-                    Olá, eu sou o <span className="text-3xl">Jeiel Lucas</span>
+                <h2 className="flex flex-col font-bold text-xl sm:text-2xl">
+                    Olá, eu sou o <span className="text-2xl sm:text-3xl">Jeiel Lucas</span>
                 </h2>
                 <span className="text-[#828282] text-2xl font-light text-center md:text-start">Desenvolvedor Full Stack</span>
                 <div className="flex gap-7">
